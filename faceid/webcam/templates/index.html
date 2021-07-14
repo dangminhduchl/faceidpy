@@ -7,5 +7,12 @@
 <body>
 <h1>Quet khuon mat</h1>
 <img src="{% url 'video-feed' %}" alt="">
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 </body>
 </html>
